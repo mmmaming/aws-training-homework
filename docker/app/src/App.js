@@ -1,0 +1,26 @@
+import {useEffect, useState} from 'react';
+import './App.css';
+
+function App() {
+    const [list, setList] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:3002/users').then(async res => {
+            const {users} = await res.json();
+            console.log(users);
+            setList(users);
+        });
+    }, []);
+    return (
+        <div className="App">
+            {
+                list.map(item => (
+                    <div key={item.name}>
+                        {item.name}
+                    </div>
+                ))
+            }
+        </div>
+    );
+}
+
+export default App;

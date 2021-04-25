@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  react:
+    build: .
+    ports:
+      - "3010:3000"
+
+    links:
+      - backend
+  backend:
+    build: ../backend/.
+    ports:
+      - "3002:3001"
