@@ -4,9 +4,9 @@ import './App.css';
 function App() {
     const [list, setList] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:3002/users').then(async res => {
+        fetch('http://localhost:3004/users').then(async res => {
             const {users} = await res.json();
-            console.log(users);
+            console.log(users, '3004');
             setList(users);
         });
     }, []);
