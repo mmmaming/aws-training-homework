@@ -36,3 +36,8 @@
 12. 本地访问127.0.0.1:7001
 `curl 127.0.0.1:7001`
 
+13. 扩容
+`kubectl scale deployments/demo --replicas=4`
+
+14. 缩容
+`kubectl scale deployments/demo --replicas=2`
